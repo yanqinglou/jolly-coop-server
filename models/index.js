@@ -1,7 +1,7 @@
 const User = require("./User");
 const Group = require("./Group");
 const Game = require("./Game")
-const Nomination = require("./Nomination")
+// const Nomination = require("./Nomination")
 const Vote = require('./Vote')
 const Usergroup = require('./Usergroup')
 const Usergame = require('./Usergame')
@@ -88,7 +88,6 @@ module.exports={
     Group,
     Game,
     Vote,
-    Usergroup,
     Usergame,
     Countdown
 }
