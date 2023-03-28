@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Game, User, Group, Usergroup, Vote } = require("../models");
+const { Game, User, Group, Vote } = require("../models");
 const jwt = require("jsonwebtoken");
 const { afterBulkSync } = require("../models/User");
 
