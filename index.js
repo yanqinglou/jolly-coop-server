@@ -8,13 +8,16 @@ const cors = require("cors")
 const app = express();
 const PORT = process.env.PORT || 3001;
 // Requiring our models for syncing
-const { User,Play} = require('./models');
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors())
 
+app.use((req, res, next) => {
+    res.header({"Access-Control-Allow-Origin": "*"});
+    next();
+  }) 
 
 app.use('/',allRoutes);
 
