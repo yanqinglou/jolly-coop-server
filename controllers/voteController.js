@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 //find all vote
 router.get("/", (req, res) => {
   Vote.findAll({
-    include: [User, Group, Game],
+    include: [User, Countdown,Group, Game],
   })
     .then((allVote) => {
       res.json(allVote);

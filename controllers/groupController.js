@@ -57,7 +57,7 @@ router.get("/:id", (req, res) => {
       .json({ msg: "you must be logged in to find a group!" });
   }
   try{
-    Group.findByPk(req.params.id, { include: [User, Game, Vote] })
+    Group.findByPk(req.params.id, { include: [User, Game] })
     .then((allGroups) => {
       res.json(allGroups);
     })

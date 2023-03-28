@@ -6,6 +6,23 @@ const Vote = require('./Vote')
 const Usergroup = require('./Usergroup')
 const Usergame = require('./Usergame')
 const Gamegroup = require('./Gamegroup')
+const Countdown = require('./Countdown')
+
+Countdown.belongsTo(Group,{
+});
+
+Group.hasMany(Countdown,{
+    onDelete:"CASCADE"
+});
+
+Countdown.belongsTo(User,{
+
+});
+
+User.hasMany(Countdown,{
+    onDelete:"CASCADE"
+});
+
 
 User.belongsToMany(Game,{
     through:Usergame,
@@ -39,7 +56,7 @@ Group.belongsToMany(Game,{
 
 Group.hasMany(Vote,{
     onDelete:"CASCADE"
-})
+});
 
 // Group.hasMany(Nomination,{
 // });
@@ -72,5 +89,6 @@ module.exports={
     Game,
     Vote,
     Usergroup,
-    Usergame
+    Usergame,
+    Countdown
 }

@@ -13,6 +13,9 @@ router.use("/api/games",gameRoutes)
 const voteRoutes = require("./voteController")
 router.use("/api/votes",voteRoutes)
 
+const countdownRoutes = require("./countdownController")
+router.use("/api/countdown",countdownRoutes)
+
 const nodemailerRoutes = require("./nodemailerController");
 router.use("/email", nodemailerRoutes);
 

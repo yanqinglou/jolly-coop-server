@@ -9,6 +9,13 @@ Group.init({
          type: DataTypes.STRING,
          allowNull:false
     },
+    // Aboutgroup:{
+    //     type: DataTypes.STRING,
+    //      unique:true,
+    //      validate:{
+    //         len:[0,250]
+    //      }
+    // },
     
 },{
     sequelize

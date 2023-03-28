@@ -106,7 +106,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// get one with plays and include groups
+// get one user and include groups and games
 router.get("/:id", (req, res) => {
   const token = req.headers?.authorization?.split(" ")[1];
   if (!token) {
@@ -117,6 +117,33 @@ router.get("/:id", (req, res) => {
   User.findByPk(req.params.id, {
     include: [Group,Game],
   })
+    .then((userData) => {
+      res.json(userData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json({ msg: "oh no", err });
+    });
+});
+
+//update user profile
+router.post("/:id", (req, res) => {
+  const token = req.headers?.authorization?.split(" ")[1];
+  if (!token) {
+    return res
+      .status(403)
+      .json({ isValid: false, msg: "you must be logged in to create a play!" });
+  }
+  User.update({
+    username:req.body.username,
+    imgURL:req.body.imgURL,
+    Aboutme:req.body.Aboutme
+  },{
+    where:{
+      id:req.params.id
+    }
+  }
+  )
     .then((userData) => {
       res.json(userData);
     })

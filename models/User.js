@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize') ;
 const sequelize = require('../config/connection');
 const bcrypt = require("bcrypt")
 
@@ -9,7 +9,10 @@ User.init({
     username: {
          type: DataTypes.STRING,
          unique:true,
-         allowNull:false
+         allowNull:false,
+         validate:{
+            len:[3,10]
+         }
     },
     email:{
         type: DataTypes.STRING,
@@ -25,6 +28,19 @@ User.init({
         validate:{
             len:[8]
         }
+    },
+    imgURL:{
+        type:DataTypes.STRING,
+        validate:{
+            is:/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/,
+        }
+    },
+    Aboutme:{
+        type: DataTypes.STRING,
+         unique:true,
+         validate:{
+            len:[0,250]
+         }
     },
 },{
     sequelize,
