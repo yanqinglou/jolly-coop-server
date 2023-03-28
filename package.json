@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rufasa85/bg-journal-back.git"
+    "url": "git+https://github.com/yanqinglou/jolly-coop-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rufasa85/bg-journal-back/issues"
+    "url": "https://github.com/yanqinglou/jolly-coop-server/issues"
   },
-  "homepage": "https://github.com/Rufasa85/bg-journal-back#readme",
+  "homepage": "https://github.com/yanqinglou/jolly-coop-server#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
